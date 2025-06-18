@@ -1,53 +1,126 @@
+# AI Tools Directory
 
+A modern web application for discovering, browsing, and managing AI tools. Built with React, TypeScript, and Tailwind CSS.
 
-Follow these steps:
+## 🚀 Features
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **Browse AI Tools**: View a comprehensive collection of AI tools with detailed information
+- **Smart Filtering**: Filter tools by category with case-insensitive search
+- **Search Functionality**: Search tools by name, category, or description
+- **Favorites System**: Save and manage your favorite AI tools
+- **Analytics Dashboard**: Visualize tool distribution by category
+- **Dark Mode**: Toggle between light and dark themes
+- **Mobile Responsive**: Optimized for all device sizes
+- **Confetti Animation**: Celebrate when adding favorites
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🛠️ Tech Stack
 
-# Step 3: Install the necessary dependencies.
-npm i
+- **Frontend**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS + Shadcn/ui
+- **Charts**: Recharts
+- **Icons**: Lucide React
+- **State Management**: React Hooks
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+## 📦 Installation
+
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd ai-tools-directory
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Open your browser and navigate to `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🏗️ Project Structure
 
-**Use GitHub Codespaces**
+```
+src/
+├── components/          # React components
+│   ├── ui/             # Shadcn/ui components
+│   ├── ToolCard.tsx    # Individual tool card component
+│   ├── ToolsList.tsx   # Tools listing with filters
+│   ├── FavoritesList.tsx # Favorites management
+│   ├── CategoryChart.tsx # Analytics chart
+│   └── Confetti.tsx    # Confetti animation
+├── services/           # API services
+│   └── mockApi.ts      # Mock API implementation
+├── types/              # TypeScript type definitions
+│   └── types.ts        # Application types
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+└── pages/              # Page components
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🎯 API Endpoints
 
-## What technologies are used for this project?
+The application uses a mock API service that simulates the following endpoints:
 
-This project is built with:
+- `GET /api/tools` - Get all AI tools
+- `GET /api/tools?category=Writing` - Filter tools by category
+- `POST /api/favorites` - Add a tool to favorites
+- `GET /api/favorites` - Get all favorite tools
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🎨 Customization
 
-## How can I deploy this project?
+### Adding New Tools
 
-Simply open [Lovable](https://lovable.dev/projects/4dbeb3ac-2b14-4df0-b441-8f63d1b50acd) and click on Share -> Publish.
+To add new AI tools, edit the `aiToolsData` array in `src/services/mockApi.ts`:
 
-## Can I connect a custom domain to my Lovable project?
+```typescript
+{
+  id: 13,
+  name: "Your AI Tool",
+  category: "Your Category",
+  description: "Tool description",
+  url: "https://your-tool.com",
+  pricing: "Free/Premium",
+  features: ["Feature 1", "Feature 2"]
+}
+```
 
-Yes, you can!
+### Styling
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+The application uses Tailwind CSS for styling. You can customize the theme in `tailwind.config.ts`.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 🚀 Deployment
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🙏 Acknowledgments
+
+- Built with [React](https://reactjs.org/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+- UI components from [Shadcn/ui](https://ui.shadcn.com/)
+- Icons from [Lucide](https://lucide.dev/)
